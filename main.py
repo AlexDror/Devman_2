@@ -6,11 +6,11 @@ from environs import Env
 from validators import url, ValidationFailure
 from requests import post, Response
 from requests.exceptions import HTTPError
-
+#import bitly_api ### С этим, конечно, в 2 раза короче скрипт будет, но вам ведь не это надо :)))
 
 def get_token() -> str:
     """ Returns a token for use bitly API """
-    env:Env = Env()
+    env: Env = Env()
     env.read_env()
     return env.str('TOKEN')
 
@@ -65,7 +65,7 @@ def is_url(link: str) -> bool:
 
 def main() -> None:
     """ Main work process """
-    link:str = ''
+    link: str = ''
     while not is_url(link):
         link = input('Введите ссылку: ')
     domain = urlparse(link).netloc
