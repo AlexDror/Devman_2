@@ -59,7 +59,7 @@ def get_clicks(link: str) -> int:
 
 def is_url(link: str) -> bool:
     """ Checks parameter link is a valid URL """
-    result:Any = url(link)
+    result: Any = url(link)
     return not isinstance(result, ValidationFailure)
 
 
